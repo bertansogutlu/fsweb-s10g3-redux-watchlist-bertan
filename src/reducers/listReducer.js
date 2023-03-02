@@ -1,7 +1,10 @@
-
-
-const reducer = (state, action) => {
-
+const initialState = {
 }
 
-export default reducer;
+const listReducer = (state = initialState, action) => {
+    return {
+        state
+      }
+}
+
+export default listReducer;
