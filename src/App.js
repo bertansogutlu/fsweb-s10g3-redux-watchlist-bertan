@@ -1,15 +1,13 @@
-import { useState } from "react";
+
 import { Switch, Route, NavLink } from "react-router-dom";
 import Movie from "./components/Movie";
 import FavMovie from "./components/FavMovie";
+import { useDispatch } from 'react-redux';
 
 function App() {
-  const [sira, setSira] = useState(0);
+  const dispatch = useDispatch();
   const favMovies = [];
 
-  function sonrakiFilm() {
-    setSira(sira + 1);
-  }
 
   return (
     <div className="wrapper max-w-2xl mx-auto">
@@ -23,11 +21,11 @@ function App() {
       </nav>
       <Switch>
         <Route exact path="/">
-          <Movie sira={sira} />
+          <Movie/>
 
           <div className="flex gap-3 justify-end py-3">
             <button
-              onClick={sonrakiFilm}
+              onClick={() => dispatch({type: "Siradaki"})}
               className="select-none px-4 py-2 border border-blue-700 text-blue-700 hover:border-blue-500 hover:text-blue-500"
             >
               Sıradaki

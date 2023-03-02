@@ -2,9 +2,14 @@ const initialState = {
 }
 
 const listReducer = (state = initialState, action) => {
-    return {
-        state
-      }
+  switch ("key") {
+    case "value":
+
+      break;
+
+    default:
+      return state;
+  }
 }
 
 export default listReducer;
