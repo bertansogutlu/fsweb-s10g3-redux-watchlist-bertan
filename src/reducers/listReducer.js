@@ -10,7 +10,7 @@ const listReducer = (state = initialState, action) => {
     case "ekle":
        return {
         ...state,
-        favMovies: [...state.favMovies, action.payload]
+        favMovies: state.favMovies.some(movie => movie.id === action.payload.id) ? state.favMovies : [...state.favMovies, action.payload]
        };
 
     case "cikar":
