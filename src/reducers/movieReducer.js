@@ -7,7 +7,7 @@ const initialState = {
 
 const movieReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "Siradaki":
+    case "siradaki":
       return {
       ...state,
       sira: state.sira + 1
